@@ -1,5 +1,5 @@
 # BlogSphere
-Prgati is a Django-powered blogging platform with authentication and a REST API.  
+Pragati is a Django-powered blogging platform with authentication and a REST API.  
 Users can create, edit, delete, draft, and publish their blogs seamlessly.  
 It also allows users to favorite other blogs for quick access.  
 
@@ -11,4 +11,4 @@ Key Features:
 - Favorites – Add other blogs to your favorites.  
 
 Built using Django, Django REST Framework (DRF), HTML, CSS, and JavaScript,  
-Prgati is a powerful and scalable blogging solution
+Pragati is a powerful and scalable blogging solution
