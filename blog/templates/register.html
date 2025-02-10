@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="contact-section section-padding" id="section_5">
+    <div class="container">
+        <div class="row">   
+            
+            <div class="col-lg-12 col-12">
+                
+                <h2 class="text-white mb-4 pb-lg-2">Register</h2>
+            </div>
+            {% for m in messages %}
+            <small class="text-danger">{{m}}</small>
+            {% endfor %}
+
+            <div class="col-lg-6 col-12">
+                <form action="" method="POST" class="custom-form contact-form" role="form">
+                    
+                    {% csrf_token %}
+                <div class="row">
+                    
+                    <div class="col-12">
+                        <label for="username" class="form-label">Usename<sup class="text-danger">*</sup></label>
+
+                        <input type="text" name="username" id="username" class="form-control" placeholder="name" required="">
+                    </div>
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email Address</label>
+
+                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Jack@gmail.com" required="">
+                    </div>
+                    <div class="col-12">
+                        <label for="password" class="form-label">Password</label>
+
+                        <input name="password" class="form-control" id="password" required="" type="password"></input>
+                        
+                    </div>
+                    <div class="col-12">
+                        <label for="cpassword" class="form-label">Confirm Password</label>
+
+                        <input name="cpassword" class="form-control" id="cpassword" required="" type="password"></input>
+                        
+                    </div>
+
+                    
+                </div>
+
+                <div class="col-lg-5 col-12 mx-auto mt-3">
+                    <button type="submit" class="form-control">Submit</button>
+                </div>
+            </form>
+            <div>
+            <a class="nav-link click-scroll text-white" href="{% url 'blog:login' %}">Already have an Account Login</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

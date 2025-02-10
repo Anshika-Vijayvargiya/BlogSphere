@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<h3>Are sure you want to delete the blog</h3>
+<form action="" method="POST">
+{% csrf_token %}
+<!-- <div>
+    <button style="background:#5a5959 ;border:1px solid #BC6C25; border-radius:10px ;" class="text-white" type="submit">delete</button>
+</div> -->
+<div>
+    <button style="background:#5a5959 ;border:1px solid #BC6C25; border-radius:10px ;" class="text-white" type="submit">
+        delete</button>
+</div>
+</form>
+{% endblock %}

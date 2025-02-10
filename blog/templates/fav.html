@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+    <section class="barista-section section-padding section-bg" id="barista-team">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
+                    
+
+                    <h2 class="text-white">Favourites</h2>
+                </div>
+                {% for i in obj %}
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
+                    <div class="team-block-wrap">
+                        <div class="team-block-info d-flex flex-column">
+                            <div class="d-flex mt-auto mb-3">
+                                <h4 class="text-white mb-0">{{i.blog.title}}</h4>
+
+                                <p class="badge ms-4"><em>{{i.blog.author}}</em></p>
+                            </div>
+
+                            <p class="text-white mb-0" style="font-size: 15px;">{{i.blog.description}}</p>
+                            <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2" class="col-sm-9" style="padding-top: 16px;" >
+                                <small class="text-white" >{{i.blog.curr}}</small><br>
+                                <small class="text-white">{{i.blog.up_date}}</small>
+    
+                            </div>
+                            
+                            <div>
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <div style="background:#5a5959 ;border-radius:10px ;"class="text-white text-center"><a href="{% url 'blog:remFav' i.id %}" class="text-white text-center">remove from Favourite</a></div>
+                                    
+                                        
+                                    </form>
+                            </div>
+                  
+                        </div>
+                        
+
+          
+                        
+                        <div class="team-block-image-wrap">
+                            <img src="{% static 'images/team/portrait-elegant-old-man-wearing-suit.jpg' %}"  alt="">
+                        </div>
+                    </div>
+                </div>
+                
+{% endfor %}
+                <!-- <div class="text-center">
+                    <span class="text-white ">Page {{obj.number }} of {{ obj.paginator.num_pages }}</span>
+                </div>
+                
+                <div class="text-center">
+                    {% if obj.has_previous %}
+                        <a href="?page={{ obj.previous_page_number }}">Previous</a>
+                    {% endif %}
+                
+                    {% if obj.has_next %}
+                        <a href="?page={{ obj.next_page_number }}">Next</a>
+                    {% endif %}
+                </div>
+ -->
+
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+

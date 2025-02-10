@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="contact-section section-padding" id="section_5">
+    <div class="container">
+        <div class="row">   
+            
+            <div class="col-lg-12 col-12">
+                
+                <h2 class="text-white mb-4 pb-lg-2">Edit the blog</h2>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <form action="" method="POST" class="custom-form contact-form" role="form">
+                    
+                    {% csrf_token %}
+                <div class="row">
+                    
+                    <div class="col-lg-6 col-12">
+                        <label for="title" class="form-label">Title<sup class="text-danger">*</sup></label>
+
+                        <input type="text" name="title" id="title" class="form-control"  required="" value="{{i.title}}">
+                    </div>
+                   
+                    <div class="col-12">
+                        <label for="description" class="form-label">Description</label>
+
+                        <textarea name="description" rows="4" class="form-control" id="description"  required="" >{{i.description}}</textarea>
+                        
+                    </div>
+
+                    
+                </div>
+
+                <div class="col-lg-5 col-12 mx-auto mt-3">
+                    <button type="submit" class="form-control">Submit</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
