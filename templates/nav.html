@@ -1,0 +1,52 @@
+
+{% load static %}
+    <nav class="navbar navbar-expand-lg">                
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="{% static 'images/coffee-beans.png' %}" class="navbar-brand-image img-fluid" alt="Barista Cafe Template">
+                Pragati
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="{% url 'blog:openp' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="{% url 'blog:draft' %}">My Drafts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="{% url 'blog:home' %}">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'blog:add' %}" class="nav-link click-scroll">Add Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'blog:favourite' %}" class="nav-link click-scroll">Favourite</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="{% url 'blog:logout' %}">logout</a>
+                    </li>
+                
+                    {% else %}
+                    
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="{% url 'blog:register' %}">sign Up</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="{% url 'blog:login' %}">Login</a>
+                    </li>
+
+                    {% endif %}
+                </ul>
+
+                
+        </div>
+    </nav>
