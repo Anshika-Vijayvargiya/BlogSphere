@@ -15,4 +15,4 @@ Pragati is a powerful and scalable blogging solution
 
 For viewing the website you should have python, django and djangorestframework installed on your system
 Download all the folder and file and stack them inside a floder name blogp.
-Use a code editor such as vscode ,to run the website type the command python manage.py runserver in the terminal then copy paste the url in your browser to view the website
+Use a code editor such as vscode ,to run the website type the command "python manage.py runserver" in the terminal then copy paste the url in your browser to view the website
